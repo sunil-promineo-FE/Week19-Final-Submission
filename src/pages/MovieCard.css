@@ -1,0 +1,48 @@
+.movie-card {
+  width: 100%; /* Ensure cards take full width of their container */
+  height: 450px; /* Set a fixed height for all cards */
+  margin: 10px; /* Add some spacing between cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+  transition: transform 0.2s; /* Optional: Add hover effect */
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-card:hover {
+  transform: scale(1.05); /* Optional: Slightly enlarge on hover */
+}
+
+.movie-card img {
+  width: 100%; /* Ensure image fits within the card */
+  height: 300px; /* Set a fixed height for the image */
+  object-fit: cover; /* Ensure image covers the space without distortion */
+}
+
+.movie-card .card-body {
+  padding: 10px; /* Reduce padding for a compact look */
+  flex-grow: 1; /* Allow the card body to grow and fill remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space out title, overview, and button */
+}
+
+.movie-card .card-title {
+  font-size: 1rem; /* Adjust title font size */
+  margin-bottom: 5px; /* Reduce spacing below title */
+}
+
+.movie-card .card-text {
+  font-size: 0.875rem; /* Adjust overview font size */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit overview to 3 lines */
+  -webkit-box-orient: vertical;
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.movie-card:hover .card-text {
+  -webkit-line-clamp: unset; /* Show all lines on hover */
+  overflow: visible; /* Allow text to overflow */
+  white-space: normal; /* Ensure text wraps properly */
+}
